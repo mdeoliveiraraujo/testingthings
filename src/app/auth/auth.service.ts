@@ -13,6 +13,7 @@ export interface AuthResponseData {
   registered?: boolean;
 }
 
+
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   constructor(private http: HttpClient) {}
