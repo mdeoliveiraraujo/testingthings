@@ -13,10 +13,10 @@ export class DataStorageService {
     const recipes = this.recipeService.getRecipes();
     this.http
       .put(
-        'https://recipe-book-f7edc-default-rtdb.firebaseio.com/recipes.json',
+        'GOTCHA',
         recipes
       )
-      .subscribe(response => {
+      .subscribe((response) => {
         console.log(response);
       });
   }
@@ -24,20 +24,20 @@ export class DataStorageService {
   fetchRecipes() {
     return this.http
       .get<Recipe[]>(
-        'https://recipe-book-f7edc-default-rtdb.firebaseio.com/recipes.json'
+        'GOTCHA'
       )
       .pipe(
-        map(recipes => {
-          return recipes.map(recipe => {
+        map((recipes) => {
+          return recipes.map((recipe) => {
             return {
               ...recipe,
-              ingredients: recipe.ingredients ? recipe.ingredients : []
+              ingredients: recipe.ingredients ? recipe.ingredients : [],
             };
           });
         }),
-        tap(recipes => {
+        tap((recipes) => {
           this.recipeService.setRecipes(recipes);
         })
-      )
+      );
   }
 }

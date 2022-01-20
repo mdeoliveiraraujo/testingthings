@@ -13,7 +13,6 @@ export interface AuthResponseData {
   registered?: boolean;
 }
 
-
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   constructor(private http: HttpClient) {}
@@ -21,7 +20,7 @@ export class AuthService {
   signup(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=GOTCHA',
+        'GOTCHA',
         {
           email: email,
           password: password,
@@ -34,7 +33,7 @@ export class AuthService {
   login(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=GOTCHA',
+        'GOTCHA',
         {
           email: email,
           password: password,
