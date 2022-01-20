@@ -20,7 +20,7 @@ export class AuthService {
   signup(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCRF-c9P5dEjntZfdkqOx_BmvSxIfjLD8Q',
+        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=GOTCHA',
         {
           email: email,
           password: password,
@@ -33,7 +33,7 @@ export class AuthService {
   login(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCRF-c9P5dEjntZfdkqOx_BmvSxIfjLD8Q',
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=GOTCHA',
         {
           email: email,
           password: password,
